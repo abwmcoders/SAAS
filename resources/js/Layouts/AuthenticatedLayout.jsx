@@ -24,11 +24,26 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
                                 </NavLink>
+                                <NavLink href={route('feature1.index')} active={route().current('feature1.index')}>
+                                    Feature 1
+                                </NavLink>
+                                <NavLink href={route('feature2.index')} active={route().current('feature2.index')}>
+                                    Feature 2
+                                </NavLink>
                             </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
-                            <div className="ms-3 relative">
+                            <span className="flex text-gray-800 gap-3">
+                                    <img src="/img/coin.png" className='w-[20px]' alt="" />
+                                    {user.available_credits} Credits
+                                    <Link href={ route('credit.index') } className="text-gray-800 py-1 px-3 rounded border transition-colors hover:text-gray-400 hover:bg-white">
+                                    Get More...
+                                </Link>
+                                </span>
+                            <div className="ms-3 relative gap-3">
+                                
+                                
                                 <Dropdown>
                                     <Dropdown.Trigger>
                                         <span className="inline-flex rounded-md">
@@ -94,6 +109,12 @@ export default function Authenticated({ user, header, children }) {
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('feature1.index')} active={route().current('feature1.index')}>
+                            Feature 1
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('feature2.index')} active={route().current('feature2.index')}>
+                            Feature 2
                         </ResponsiveNavLink>
                     </div>
 
